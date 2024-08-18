@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="playermovementdata" load_steps=2 format=3 uid="uid://ccagf0eitrxbj"]
+
+[ext_resource type="Script" path="res://playermovementdata.gd" id="1_htfdl"]
+
+[resource]
+script = ExtResource("1_htfdl")
+SPEED = 100.0
+FRICTION = 500
+ACCELERATION = 550.0
+JUMP_VELOCITY = -300.0
+GRAVITY_SCALE = 1.2
+AIR_RESISTANCE = 200
+CROUCH_SPEED = 70
+WALL_JUMP_PUSHBACK = 200
+WALL_SLIDE_GRAVITY = 50
+SLIDE_BOOST = 10
+DECELERATION = -5
