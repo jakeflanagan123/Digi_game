@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwxam6oq7wncp"]
+
+[ext_resource type="Script" path="res://movingplatform.gd" id="1_mdj4l"]
+[ext_resource type="Texture2D" uid="uid://bqr2t2gd6o60y" path="res://Assets/Screenshot 2024-08-26 091239.png" id="2_w47rj"]
+
+[sub_resource type="Curve2D" id="Curve2D_osp0w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1742, 77, 0, 0, 0, 0, -1210, 75.0001)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypc8m"]
+size = Vector2(256.5, 128)
+
+[sub_resource type="Animation" id="Animation_eangt"]
+length = 3.0
+loop_mode = 2
+
+[sub_resource type="Animation" id="Animation_n0kdp"]
+resource_name = "moving_platform1"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(-2, -1.5),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6bt4"]
+_data = {
+"RESET": SubResource("Animation_eangt"),
+"moving_platform1": SubResource("Animation_n0kdp")
+}
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(1998, 63)
+curve = SubResource("Curve2D_osp0w")
+script = ExtResource("1_mdj4l")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-1737.81, 76.9842)
+rotation = -0.00375915
+progress = 4.24006
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-1737.81, 76.9843)
+rotation = -0.00375915
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_w47rj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ypc8m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y6bt4")
+}
+speed_scale = 4.0

@@ -1,8 +1,10 @@
 extends CharacterBody2D
+class_name Player
 
 @export var movement_data : playermovementdata
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyotejumptimer = $coyotejumptimer
@@ -11,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var crouch_raycast_2 = $RayCast2D2
 @onready var slidetimer = $slidetimer
 @onready var slowdownslidetimer = $slowdownslidetimer
+@onready var slidespamtimer = $slidespamtimer
 
 var is_crouching = false
 var underneath_tile = false
@@ -21,8 +24,10 @@ var standing_cshape = preload("res://Assets/standing.tres")
 var crouching_cshape = preload("res://Assets/crouching.tres")
 var sliding_cshape = preload("res://Assets/sliding.tres")
 
+func _ready():
+	GameManager.player = self
+
 func _physics_process(delta):
-	print(slidetimer.time_left)
 	apply_gravity(delta)
 	handle_jump()
 	wall_slide(delta)
@@ -116,11 +121,15 @@ func wall_slide(delta):
 		velocity.y += (movement_data.WALL_SLIDE_GRAVITY * delta)
 		velocity.y = min(velocity.y, movement_data.WALL_SLIDE_GRAVITY)
 		
-		
-
-
+func die():
+	GameManager.respawn_player()
+	
+	
+	
 func update_animations(input_axis):
 	if is_on_floor():
+		if slidespamtimer.time_left > 0:
+			is_sliding == false
 		if input_axis == 0:
 			is_sliding = false
 			if is_crouching and velocity.x * input_axis < 100:
@@ -133,17 +142,17 @@ func update_animations(input_axis):
 				velocity.x = movement_data.CROUCH_SPEED * input_axis
 			if !is_crouching and !is_sliding:
 				animated_sprite_2d.play("run")
-			if is_sliding and (slidetimer.time_left > 0.1):
-				if velocity.x * input_axis < 150:
+			if is_sliding and (slidetimer.time_left > 0.1) and (slidespamtimer.time_left < 0.1):
+				if velocity.x * input_axis < 2000:
+					slidespamtimer.start()
 					animated_sprite_2d.play("slide")
 					velocity.x = move_toward(velocity.x, velocity.x + 20 * input_axis, movement_data.SPEED * movement_data.ACCELERATION)
-					is_sliding = false
-				if is_sliding and (slidetimer.time_left > 0.1) and (velocity.x * input_axis > 149):
-					animated_sprite_2d.play("slide")
-					velocity.x = move_toward(velocity.x, velocity.x + 10 * input_axis, movement_data.SPEED * movement_data.ACCELERATION)
+					cshape.shape = sliding_cshape
+					cshape.position.y = -10
 					is_sliding = false
 			if slowdownslidetimer.time_left < 0.1 and Input.is_action_pressed("ui_down"):
 				velocity.x = move_toward(velocity.x, velocity.x + movement_data.DECELERATION * input_axis, movement_data.SPEED * movement_data.ACCELERATION)
+
 		if Input.is_action_just_released("ui_down"):
 			is_sliding = false
 			slidetimer.time_left == 0.0
@@ -157,6 +166,8 @@ func update_animations(input_axis):
 				animated_sprite_2d.play("fall")
 	if is_wall_sliding == true:
 		animated_sprite_2d.play("wall_slide")
+	if position.y >= 600:
+		die()
 		
 func switch_direction(input_axis):
 	animated_sprite_2d.flip_h = (input_axis == -1)
@@ -173,9 +184,7 @@ func slide():
 	if is_sliding:
 		return
 	is_sliding = true
-	cshape.shape = sliding_cshape
 	cshape.position.y = 10
-
 	
 func stand():
 	if is_crouching == false:
@@ -183,3 +192,17 @@ func stand():
 	is_crouching = false
 	cshape.shape = standing_cshape
 	cshape.position.y = -18.5
+
+func slide_tilt():
+	cshape.rotation = 10
+	animated_sprite_2d.rotation = 0.4
+	
+func _on_slide_tilt_area_entered(area):
+	slide_tilt()
+
+func tilt_fix():
+	cshape.rotation = 0
+	animated_sprite_2d.rotation = 0
+
+func _on_slide_tilt_area_exited(area):
+	tilt_fix()

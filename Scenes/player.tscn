@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cp31wwdulyyna"]
+[gd_scene load_steps=66 format=3 uid="uid://bp45tkhhnylkh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_nnsjt"]
 [ext_resource type="Texture2D" uid="uid://cqdoosoqv6nro" path="res://FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Fall.png" id="2_7mcq6"]
@@ -12,10 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://7eby2u1mbb76" path="res://FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_SlideFull.png" id="9_5y0m6"]
 [ext_resource type="Texture2D" uid="uid://c6q1ibd7dg72v" path="res://FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Roll.png" id="9_kikkn"]
 [ext_resource type="Texture2D" uid="uid://dbilpgbdxvwhy" path="res://FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_WallHang.png" id="11_yapxo"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5eeg"]
-radius = 8.0
-height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8yu05"]
 atlas = ExtResource("2_cn1fp")
@@ -440,13 +436,6 @@ floor_snap_length = 3.0
 script = ExtResource("1_nnsjt")
 movement_data = ExtResource("2_54p7r")
 
-[node name="Area2D" type="Area2D" parent="."]
-monitoring = false
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4, -18)
-shape = SubResource("CapsuleShape2D_x5eeg")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
 scale = Vector2(0.908334, 0.9875)
@@ -475,13 +464,10 @@ target_position = Vector2(0, -23)
 position = Vector2(5, -16)
 target_position = Vector2(0, -22)
 
-[node name="slowdownslidetimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
 [node name="slidetimer" type="Timer" parent="."]
 wait_time = 0.75
 one_shot = true
 
-[node name="slidespamtimer" type="Timer" parent="."]
+[node name="slowdownslidetimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
