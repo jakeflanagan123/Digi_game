@@ -5,12 +5,12 @@
 
 [sub_resource type="Curve2D" id="Curve2D_osp0w"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1567, 97, 0, 0, 0, 0, -752, 97)
+"points": PackedVector2Array(0, 0, 0, 0, -1566.67, 96.667, 0, 0, 0, 0, -752, 97)
 }
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypc8m"]
-size = Vector2(126.667, 253.334)
+size = Vector2(256.619, 123.438)
 
 [sub_resource type="Animation" id="Animation_eangt"]
 length = 3.0
@@ -45,14 +45,16 @@ curve = SubResource("Curve2D_osp0w")
 script = ExtResource("1_k2bx2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-1562.86, 97)
+position = Vector2(-1562.53, 96.6687)
+rotation = 0.000408766
 progress = 4.24006
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(-1562.86, 97)
+position = Vector2(-1562.53, 96.6687)
+rotation = 0.000408766
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_btdi8")

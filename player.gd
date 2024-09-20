@@ -168,7 +168,6 @@ func update_animations(input_axis):
 		animated_sprite_2d.play("wall_slide")
 	if position.y >= 600:
 		die()
-		
 func switch_direction(input_axis):
 	animated_sprite_2d.flip_h = (input_axis == -1)
 	animated_sprite_2d.position.x = input_axis * 4
