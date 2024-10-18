@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1qgjb5x6ujwm"
+path="res://.godot/imported/Tomb Dweller.mp3-9afd1f8d3ca86040b8adee7105c24bf9.mp3str"
+
+[deps]
+
+source_file="res://10 Synths/10 Synths/Tomb Dweller.mp3"
+dest_files=["res://.godot/imported/Tomb Dweller.mp3-9afd1f8d3ca86040b8adee7105c24bf9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

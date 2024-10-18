@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5684dc3ry1vn"
+path="res://.godot/imported/Techno Graveyard.mp3-7f4c92e7fd3faa08d127d4218f82e9ae.mp3str"
+
+[deps]
+
+source_file="res://10 Synths/10 Synths/Techno Graveyard.mp3"
+dest_files=["res://.godot/imported/Techno Graveyard.mp3-7f4c92e7fd3faa08d127d4218f82e9ae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

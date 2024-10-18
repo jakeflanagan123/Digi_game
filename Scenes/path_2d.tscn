@@ -46,7 +46,7 @@ script = ExtResource("1_k2bx2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-1562.53, 96.6687)
-rotation = 0.000408766
+rotation = 0.000408755
 progress = 4.24006
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
@@ -54,7 +54,7 @@ remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(-1562.53, 96.6687)
-rotation = 0.000408766
+rotation = 0.000408755
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_btdi8")

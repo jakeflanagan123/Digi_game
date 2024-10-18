@@ -15,6 +15,6 @@ texture = ExtResource("2_q4g2p")
 monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-8, 176, 73, 26, 93, 26, 174, 177)
+polygon = PackedVector2Array(-8, 176, 73, 26, 93, 26, 174, 176)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

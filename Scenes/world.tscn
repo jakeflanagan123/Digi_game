@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4dhni0mf76r7" path="res://oak_woods_v1.0/background/background_layer_3.png" id="5_73vcw"]
 [ext_resource type="Texture2D" uid="uid://b7wj5j52n882c" path="res://oak_woods_v1.0/oak_woods_tileset.png" id="6_61d1n"]
 [ext_resource type="PackedScene" uid="uid://wv7gwqih5qc1" path="res://Scenes/path_2d.tscn" id="7_t36ht"]
-[ext_resource type="Texture2D" path="res://Assets/rotatedScreenshot 2024-08-26 091239.png" id="8_x6xb8"]
+[ext_resource type="Texture2D" uid="uid://7aimv6mm1unw" path="res://Assets/rotatedScreenshot 2024-08-26 091239.png" id="8_x6xb8"]
 [ext_resource type="PackedScene" uid="uid://dfw2kdal0410g" path="res://checkpoint.tscn" id="9_mksi4"]
 [ext_resource type="Script" path="res://Scenes/Slide_tilt.gd" id="10_6kgk8"]
 
@@ -2832,13 +2832,8 @@ position = Vector2(2850, 145)
 scale = Vector2(0.3, 0.3)
 metadata/_edit_group_ = true
 
-[node name="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2(-1562.53, 96.6687)
-rotation = 0.000408766
-
 [node name="AnimatableBody2D" parent="Path2D" index="1"]
 position = Vector2(-1562.53, 96.6687)
-rotation = 0.000408766
 
 [node name="CollisionShape2D" parent="Path2D/AnimatableBody2D" index="1"]
 position = Vector2(-2.14014, -0.333252)
@@ -2849,13 +2844,8 @@ rotation = -1.5708
 scale = Vector2(0.3, 0.3)
 metadata/_edit_group_ = true
 
-[node name="PathFollow2D" parent="Path2D2" index="0"]
-position = Vector2(-1562.53, 96.6687)
-rotation = 0.000408766
-
 [node name="AnimatableBody2D" parent="Path2D2" index="1"]
-position = Vector2(-1562.53, 96.6699)
-rotation = 0.000408766
+position = Vector2(-1562.53, 96.6689)
 
 [node name="Sprite2D" parent="Path2D2/AnimatableBody2D" index="0"]
 texture = ExtResource("8_x6xb8")
@@ -2879,7 +2869,7 @@ position = Vector2(-1, -167)
 polygon = PackedVector2Array(-8, 176, 0, 160, 2, 160, 10, 176, 5, 176)
 
 [node name="Spikes2" parent="." instance=ExtResource("3_poywf")]
-position = Vector2(3853, -186)
+position = Vector2(4025, -313)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Spikes2" index="0"]
@@ -2907,7 +2897,7 @@ position = Vector2(-1, -167)
 polygon = PackedVector2Array(-8, 176, 0, 160, 2, 160, 10, 176, 5, 176)
 
 [node name="Spikes4" parent="." instance=ExtResource("3_poywf")]
-position = Vector2(3885, -192)
+position = Vector2(3880, -312)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Spikes4" index="0"]
@@ -2921,7 +2911,7 @@ position = Vector2(-1, -167)
 polygon = PackedVector2Array(-8, 176, 0, 160, 2, 160, 10, 176, 5, 176)
 
 [node name="Spikes5" parent="." instance=ExtResource("3_poywf")]
-position = Vector2(3924, -189)
+position = Vector2(3925, -307)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Spikes5" index="0"]
@@ -2949,7 +2939,7 @@ position = Vector2(-1, -167)
 polygon = PackedVector2Array(-8, 176, 0, 160, 2, 160, 10, 176, 5, 176)
 
 [node name="Spikes7" parent="." instance=ExtResource("3_poywf")]
-position = Vector2(3980, -189)
+position = Vector2(3973, -302)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Spikes7" index="0"]

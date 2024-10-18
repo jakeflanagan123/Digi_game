@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddqqjcqbang7r"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_sovwl"]
+[ext_resource type="Texture2D" uid="uid://dl7f1efbv83ij" path="res://BG_DesertMountains/background1.png" id="2_gysfc"]
+[ext_resource type="Script" path="res://parallax_background.gd" id="2_n2t4h"]
+[ext_resource type="Texture2D" uid="uid://c4ami5rl25kls" path="res://BG_DesertMountains/background3.png" id="3_vnpjm"]
+[ext_resource type="Texture2D" uid="uid://ck0xnsobkkndi" path="res://BG_DesertMountains/cloud1.png" id="4_iyctd"]
+[ext_resource type="Texture2D" uid="uid://bpc311gpt1877" path="res://BG_DesertMountains/cloud7.png" id="5_clbt8"]
+[ext_resource type="Texture2D" uid="uid://eupo8oxn0118" path="res://BG_DesertMountains/cloud6.png" id="6_4a0mp"]
+
+[sub_resource type="SystemFont" id="SystemFont_o7ing"]
+font_names = PackedStringArray("Arial")
+force_autohinter = true
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sovwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 66.0
+offset_right = 194.0
+offset_bottom = 167.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_n2t4h")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_gysfc")
+expand_mode = 1
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_gysfc")
+expand_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer3"]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("3_vnpjm")
+expand_mode = 1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer4"]
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 62.0
+offset_bottom = 33.0
+texture = ExtResource("4_iyctd")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer5"]
+offset_left = 190.0
+offset_top = 26.0
+offset_right = 308.0
+offset_bottom = 64.0
+texture = ExtResource("5_clbt8")
+expand_mode = 1
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer6"]
+offset_left = 70.0
+offset_top = 43.0
+offset_right = 148.0
+offset_bottom = 74.0
+texture = ExtResource("6_4a0mp")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = SubResource("SystemFont_o7ing")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 1
+text = " Echoes of the Baron Lands"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 137.0
+offset_right = 300.0
+offset_bottom = 165.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="credits" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Credits
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/credits" to="." method="_on_credits_pressed"]

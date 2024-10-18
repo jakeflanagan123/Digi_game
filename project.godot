@@ -10,14 +10,26 @@ config_version=5
 
 [application]
 
-config/name="Digi_game"
-run/main_scene="res://Scenes/world.tscn"
+config/name="Echoes of the Baron Lands"
+config/description="In \"Echoes of the Baron Lands,\" step into the worn boots of Sir Alaric, a noble knight driven by a profound quest for purpose amidst the desolate beauty of a world scarred by time and hardship. The barren lands stretch endlessly, filled with crumbling ruins, ghostly forests, and windswept plains, each echoing the tales of lost souls and forgotten dreams.
+
+As you traverse this harsh landscape, you'll encounter challenging foes—bandits, twisted creatures, and remnants of ancient magic. Yet, the true battle lies within. Engage in deep, reflective dialogues with enigmatic characters: a wandering sage who speaks in riddles, a fallen knight haunted by regret, and a wise crone who knows the secrets of the land. Each interaction draws you closer to understanding your own heart and the burdens of your past.
+
+Explore lush valleys and stark mountains, where the remnants of a once-thriving civilization whisper stories of hope and despair. Solve intricate puzzles that unveil the mysteries of the land, unlocking profound insights into the nature of honor, sacrifice, and the human spirit.
+
+Your journey is not just one of combat and exploration, but of introspection. Make choices that shape not only the world around you but also your own destiny. Will you be a beacon of hope for the downtrodden or a solitary wanderer seeking personal redemption?
+
+In \"Echoes of the Baron Lands,\" every step brings you closer to a deeper understanding of life’s meaning—crafted through choice, challenge, and the echoes of those who came before you. Will you find your path in the shadows of the barren lands, or will you become another whisper lost to time?"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/image="res://Assets/long_wood_spike.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
 GameManager="*res://Scenes/GameManager.gd"
+Soundcontrol="*res://soundcontrol.tscn"
 
 [display]
 

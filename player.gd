@@ -73,11 +73,14 @@ func apply_gravity(delta):
 func handle_jump():
 	if is_on_floor() or coyotejumptimer.time_left > 0.0:
 		if Input.is_action_just_pressed("ui_up"):
+			Soundcontrol.play_jump()
 			velocity.y = movement_data.JUMP_VELOCITY
 		if is_on_wall() and Input.is_action_just_pressed("ui_up") and Input.is_action_pressed("ui_left"):
+			Soundcontrol.play_jump()
 			velocity.y = movement_data.JUMP_VELOCITY
 			velocity.x = movement_data.WALL_JUMP_PUSHBACK
 		if is_on_wall() and Input.is_action_just_pressed("ui_up") and Input.is_action_pressed("ui_right"):
+			Soundcontrol.play_jump()
 			velocity.y = movement_data.JUMP_VELOCITY
 			velocity.x = -movement_data.WALL_JUMP_PUSHBACK
 			
@@ -85,9 +88,11 @@ func handle_jump():
 		if Input.is_action_just_released("ui_up") and velocity.y < movement_data.JUMP_VELOCITY / 2:
 			velocity.y = movement_data.JUMP_VELOCITY / 2
 		if is_on_wall() and Input.is_action_just_pressed("ui_up") and Input.is_action_pressed("ui_left"):
+			Soundcontrol.play_jump()
 			velocity.y = movement_data.JUMP_VELOCITY
 			velocity.x = movement_data.WALL_JUMP_PUSHBACK
 		if is_on_wall() and Input.is_action_just_pressed("ui_up") and Input.is_action_pressed("ui_right"):
+			Soundcontrol.play_jump()
 			velocity.y = movement_data.JUMP_VELOCITY
 			velocity.x = -movement_data.WALL_JUMP_PUSHBACK
 
@@ -167,6 +172,7 @@ func update_animations(input_axis):
 	if is_wall_sliding == true:
 		animated_sprite_2d.play("wall_slide")
 	if position.y >= 600:
+		Soundcontrol.play_death()
 		die()
 func switch_direction(input_axis):
 	animated_sprite_2d.flip_h = (input_axis == -1)

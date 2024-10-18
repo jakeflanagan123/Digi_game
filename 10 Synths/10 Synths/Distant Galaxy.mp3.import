@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4ro0q27gm1gl"
+path="res://.godot/imported/Distant Galaxy.mp3-9a7c2e1c2b495eb2d9ab79ece68f264d.mp3str"
+
+[deps]
+
+source_file="res://10 Synths/10 Synths/Distant Galaxy.mp3"
+dest_files=["res://.godot/imported/Distant Galaxy.mp3-9a7c2e1c2b495eb2d9ab79ece68f264d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

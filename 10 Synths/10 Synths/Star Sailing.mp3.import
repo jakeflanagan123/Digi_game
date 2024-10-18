@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xbfvs03q216h"
+path="res://.godot/imported/Star Sailing.mp3-97d81508456fc744a4eab4f3e93222e9.mp3str"
+
+[deps]
+
+source_file="res://10 Synths/10 Synths/Star Sailing.mp3"
+dest_files=["res://.godot/imported/Star Sailing.mp3-97d81508456fc744a4eab4f3e93222e9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

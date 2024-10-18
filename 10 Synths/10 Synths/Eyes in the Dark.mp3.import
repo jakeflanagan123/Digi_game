@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b85aasym5eb0r"
+path="res://.godot/imported/Eyes in the Dark.mp3-8d3a47f8710f50e6b1d29c5834a33caa.mp3str"
+
+[deps]
+
+source_file="res://10 Synths/10 Synths/Eyes in the Dark.mp3"
+dest_files=["res://.godot/imported/Eyes in the Dark.mp3-8d3a47f8710f50e6b1d29c5834a33caa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

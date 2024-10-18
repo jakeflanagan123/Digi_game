@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://civ18qqpwqgj4"]
+
+[ext_resource type="Script" path="res://soundcontrol.gd" id="1_cqpc6"]
+[ext_resource type="AudioStream" path="res://10 Synths/10 Synths/SNES Side Scroller.mp3" id="1_egxv1"]
+[ext_resource type="AudioStream" uid="uid://dnp1ipfcjc8d3" path="res://RPG_Essentials_Free/12_Player_Movement_SFX/30_Jump_03.wav" id="2_7qmkg"]
+[ext_resource type="AudioStream" uid="uid://cbf8hqlhiqxn2" path="res://RPG_Essentials_Free/10_Battle_SFX/69_Enemy_death_01.wav" id="4_xullo"]
+[ext_resource type="AudioStream" uid="uid://c8yrhpnp61xty" path="res://RPG_Essentials_Free/10_UI_Menu_SFX/013_Confirm_03.wav" id="5_0jg4o"]
+
+[node name="soundcontrol" type="Node2D"]
+script = ExtResource("1_cqpc6")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_egxv1")
+volume_db = -7.0
+pitch_scale = 0.89
+max_distance = 200000.0
+attenuation = 1e-05
+panning_strength = 0.0
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7qmkg")
+pitch_scale = 1.37
+max_distance = 2e+11
+attenuation = 1e-05
+panning_strength = 0.0
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-2, 1)
+stream = ExtResource("4_xullo")
+volume_db = 8.0
+pitch_scale = 0.56
+max_distance = 2e+08
+attenuation = 1e-05
+panning_strength = 0.0
+
+[node name="menubutton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0jg4o")
+volume_db = 5.699
+attenuation = 1e-05
+panning_strength = 0.0
